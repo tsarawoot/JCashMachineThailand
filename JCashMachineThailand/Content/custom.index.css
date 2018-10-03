@@ -1,0 +1,112 @@
+﻿body, html{
+    height:100%;
+}
+.background-parallax {
+    /* Image */
+    background-image: url('../Images/bg.jpg');
+    /* Set a specific height */
+    height: 400px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.headerBox {
+    margin-left: 5%;
+    width: 640px;
+    position: absolute;
+    pointer-events: none;
+    top: 200px;
+    /*height: 200px;*/
+    word-wrap: break-word;
+    text-align: start;
+}
+
+.headerText {
+    color: white;
+    position: absolute;
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    font-family: poppins-semibold,poppins,sans-serif ;
+    font-size: 64px;
+    line-height: 1.2em;
+    font-weight:bold;
+}
+
+.subHeaderText {
+    color: white;
+    position: absolute;
+    font-weight: 200;
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    font-family: poppins-semibold,poppins,sans-serif;
+    font-size: 20px;
+    line-height: 1.2em;
+}
+
+@media only screen and (max-width:960px) {
+    .background-parallax {
+        background-attachment: scroll
+    }
+}
+@media only screen and (max-width:768px) {
+    .headerText{
+        font-size:48px;
+        /*color:red;*/
+    }
+    .headerBox{
+        width:320px;
+    }
+    .background-parallax {
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width:520px) {
+    .headerText {
+        font-size: 36px;
+        /*color:chartreuse;*/
+    }
+    .subHeaderText {
+        font-size: 16px;
+    }
+    .headerBox {
+        width: 260px;
+        top: 160px;
+    }
+    .background-parallax {
+        height: 220px;
+    }
+}
+
+@media only screen and (max-width:414px) {
+    .headerText {
+        font-size: 30px;
+        /*color:chartreuse;*/
+    }
+    .subHeaderText {
+        font-size: 11px;
+    }
+    .headerBox {
+        width: 260px;
+    }
+    .background-parallax{
+        height:180px;
+    }
+}
+
+/*iPhone5/SE*/
+@media only screen and (max-device-width:320px) {
+    .headerText {
+        font-size: 28px;
+        /*color: chartreuse;*/
+    }
+    .headerBox {
+        width: 260px;
+        top:160px;
+    }
+    .background-parallax {
+        height: 180px;
+    }
+}

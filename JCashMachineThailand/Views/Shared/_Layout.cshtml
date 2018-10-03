@@ -6,19 +6,24 @@
     <title>@ViewBag.Title - JCM Thailand</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link rel="stylesheet" type="text/css" href="~/Content/custom.layout.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/custom.layout.css" />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+
 </head>
 <body>
     <!--  Navigation Bar -->
-    <nav class="navbar navbar-expand-md">
-        <!--navbar  navbar-expand-md navbar-dark fixed-top bg-dark-->
-        <!-- Brand -->
-        <a class="navbar-brand" href="/Home/About">[ JCM-Thailand ]</a>
-        <!-- Toggler/collapsibe Button -->
+    <nav class="navbar navbar-expand-md navbar-light">
+        <!-- ::Brand -->
+        <!-- <a class="navbar-brand" href="/Home/About">[ JCM-Thailand ]</a> -->
+        <a class="navbar-brand" href="/Home/About">
+            <img src="~/Images/JCM_Global_RGB - email signature.png" />
+        </a>
+        <!-- ::Toggler/collapsibe Button -->
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navMenu">
-            <span class="carousel-control-prev-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
-        <!-- Navbar links -->
+        <!-- ::Navbar links -->
         <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link" })</li>
@@ -26,7 +31,6 @@
                 <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", new { @class = "nav-link" })</li>
             </ul>
         </div>
-
     </nav>
     <div class="container body-content">
         @RenderBody()

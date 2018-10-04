@@ -1,5 +1,5 @@
-﻿body, html{
-    height:100%;
+﻿body{
+    width:100%;
 }
 .background-parallax {
     /* Image */
@@ -15,7 +15,7 @@
 }
 
 .headerBox {
-    margin-left: 5%;
+    margin-left: 8%;
     width: 640px;
     position: absolute;
     pointer-events: none;
@@ -109,4 +109,30 @@
     .background-parallax {
         height: 180px;
     }
+}
+
+.p-15 {
+    font-size: 15px;
+    font-weight: lighter;
+    font-family: poppins-semibold,poppins,sans-serif;
+    line-height: 1.875em;
+}
+
+.font-smoothing {
+    -webkit-font-smoothing: antialiased;
+}
+
+.bg-blueJCM{
+    background-color:#003862;
+}
+
+.color-white {
+    color: white;
+}
+
+#introduce {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 5%;
+    padding-right: 5%;
 }

@@ -12,7 +12,7 @@
 
 </head>
 <body>
-    <!--  Navigation Bar -->
+    <!--## Navigation Bar ##-->
     <nav class="navbar navbar-expand-md navbar-light">
         <!-- ::Brand -->
         <!-- <a class="navbar-brand" href="/Home/About">[ JCM-Thailand ]</a> -->
@@ -32,14 +32,15 @@
             </ul>
         </div>
     </nav>
-    <div class="container body-content">
+    <!--## Body Page ##-->
+    <div class="container-fluid m-0 p-0">
         @RenderBody()
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-
+    <!--## Script Import ##-->
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

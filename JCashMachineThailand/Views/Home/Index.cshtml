@@ -5,7 +5,7 @@
     <!-- parallax baground-->
     <div class="background-parallax">
         <div class="container headerBox">
-            <h1 class="headerText">
+            <h1 id="company-name" class="headerText">
                 J-Cash Machine(Thailand)<br />
                 <span class="subHeaderText">A Global Solutions by JCM</span>
             </h1>
@@ -105,13 +105,31 @@
                     </form>
                 </div>
             </div>
-            <div id="googleMap" class="row p-0 m-0">
-                <div class="bg-secondary w-100" style="height:400px">
-                    <p>JCM-T map</p>
-                </div>
+            <div class="row p-0 m-0 bg-secondary w-100" style="height:400px">
+                <p id="googleMap">JCM-T map</p>
             </div>
         </div>
     </section>
 </section>
 <!-- Import Page Stylesheet -->
 <link rel="stylesheet" type="text/css" href="~/Content/custom.index.css" />
+
+@section scripts{
+<script>
+    $(document).ready(function () {
+        
+        //$("#googleMap").click(function (e) {
+        //    $("#googleMap").append("<h2>I am a Header2</h2>");
+        //});
+
+
+    });
+
+    // Is this element visible onscreen? 
+    //var visible = $("#googleMap").visible(); 
+    // Set the visible status into the span. 
+    //$(this).find('span').text(visible ? 'Onscreen' : 'Offscreen').toggleClass('visible', visible);
+</script>
+}
+
+

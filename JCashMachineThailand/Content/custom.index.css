@@ -34,7 +34,9 @@
     font-size: 72px;
     line-height: 1.2em;
     font-weight: bold;
-    
+    /*animate text*/
+    animation: moveup 3s;
+    -webkit-animation: moveup 3s;
 }
 
 .subHeaderText {
@@ -150,3 +152,33 @@
     max-width:768px;
 }
 
+/* Code for old Chrome, Safari and Opera */
+@-webkit-keyframes moveup {
+    from {
+        opacity: 0;
+        top: 3rem;
+    }
+
+    to {
+        opacity: 1;
+        top: 1rem;
+    }
+}
+
+/* Standard syntax */
+@keyframes moveup {
+    from {
+        opacity: 0;
+        top:3rem;
+    }
+
+    to {
+        opacity: 1;
+        top:1rem;
+    }
+}
+
+.card-body {
+    animation: moveup 3s;
+    -webkit-animation: moveup 3s;
+}

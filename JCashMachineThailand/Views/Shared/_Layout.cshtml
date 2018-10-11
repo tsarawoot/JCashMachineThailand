@@ -13,7 +13,7 @@
 </head>
 <body>
     <!--## Navigation Bar ##-->
-    <nav class="navbar navbar-expand-md navbar-light">
+    <nav class="navbar navbar-expand-md navbar-light @*fixed-top*@ bg-white">
         <!-- ::Brand -->
         <!-- <a class="navbar-brand" href="/Home/About">[ JCM-Thailand ]</a> -->
         <a class="navbar-brand" href="/Home/About">
@@ -44,5 +44,6 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
 </body>
 </html>

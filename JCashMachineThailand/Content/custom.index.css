@@ -35,8 +35,8 @@
     line-height: 1.2em;
     font-weight: bold;
     /*animate text*/
-    animation: moveup 3s;
-    -webkit-animation: moveup 3s;
+    animation: moveup 2s;
+    -webkit-animation: moveup 2s;
 }
 
 .subHeaderText {
@@ -181,4 +181,11 @@
 .card-body {
     animation: moveup 3s;
     -webkit-animation: moveup 3s;
+}
+#feature{
+    min-height:500px;
+}
+
+#product, #service, #career {
+    display: none;
 }

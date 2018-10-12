@@ -1,17 +1,55 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<div class="container">
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container-fluid p-md-5">
+            <div class="row  p-0 m-0 bg-jcm-contact">
+                <div id="mapArea" class="row p-0 m-0 bg-secondary w-100" style="height:400px; word-break:break-all  ">
+                    <p>JCM-T map</p>
+                </div>
+                <div class="col-md-6 pt-3 border">
+                    <div class="card text-center border-0 bg-jcm-contact">
+                        <h3 class="card-title color-jcm-blue p-3">Contact Us</h3>
+                        <h5 class="card-subtitle pb-3">J-Cash Machine (Thailand) Co.,Ltd.</h5>
+                        <address>
+                            42 Tower, Room701, 7th Floor,<br />
+                            65 Soi Sukhumvit 42 (Kluaynamthai),<br />
+                            Sukhumvit Rd., Prakanong Klongtoey,<br />
+                            Bangkok 10110 Thailand<br />
+                            <br />
+                            <a href="mailto:t.sarawoot@jcm-thai.co.th">t.sarawoot@jcm-thai.co.th</a><br />
+                            <br />
+                            Tel. +66 2 712 3155-6<br />
+                            Fax. +66 2 712 3157
+                        </address>
+                    </div>
+                </div>
+                <div class="col-md-6 py-3">
+                    <form class=" mx-xl-5 pt-3">
+                        <div class="form-group">
+                            <div class="form-row justify-content-center">
+                                <div class="col-md">
+                                    <input type="text" class="form-control mb-2 max-width-768px btn-outline-dark" id="name" placeholder="Name" />
+                                </div>
+                                <div class="col-md">
+                                    <input type="email" class="form-control mb-2 max-width-768px btn-outline-dark" id="email" placeholder="Email" />
+                                </div>
+                            </div>
+                            <input type="text" class="form-control mb-2 max-width-768px btn-outline-dark" id="subject" placeholder="Subject" />
+                            <input type="text" class="form-control mb-2 max-width-768px btn-outline-dark" id="phone" placeholder="Phone" />
+                            <input type="text" class="form-control mb-2 max-width-768px btn-outline-dark" id="address" placeholder="Address" />
+                            <textarea class="form-control mb-3 max-width-768px btn-outline-dark" id="message" rows="3" placeholder="Message"></textarea>
+                            <button type="submit" class="btn-dark w-100">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<!-- Import Page Stylesheet -->
+<link rel="stylesheet" type="text/css" href="~/Content/custom.index.css" />

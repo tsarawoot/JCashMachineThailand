@@ -8,10 +8,10 @@
     height: 520px;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
-    background-position: center;
+    background-position-x: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
+    transition-duration: 1.5s;
 }
 
 .headerBox {
@@ -27,7 +27,7 @@
 }
 
 .headerText {
-    color: white;
+    color: #003862; /* JCM:#003862 */
     position: absolute;
     /*font-family: Arial, Helvetica, sans-serif;*/
     font-family: poppins-semibold,poppins,sans-serif;
@@ -37,6 +37,8 @@
     /*animate text*/
     animation: moveup 2s;
     -webkit-animation: moveup 2s;
+    transition-duration: 0.5s;
+    text-shadow: 1px 1px 3px #000000;
 }
 
 .subHeaderText {
@@ -177,13 +179,14 @@
         top:1rem;
     }
 }
-
 .card-body {
     animation: moveup 3s;
     -webkit-animation: moveup 3s;
 }
 #feature{
     min-height:500px;
+    /*display:none;*/
+    transition-duration:0.5s;
 }
 
 #product, #service, #career {

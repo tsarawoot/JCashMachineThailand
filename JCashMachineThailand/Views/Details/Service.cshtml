@@ -1,0 +1,29 @@
+﻿@model IList<JCashMachineThailand.Models.Service>
+@{
+    ViewBag.Title = "Service";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-header">
+    <img class="img-header img-rotate-180" src="~/Images/service-header.jpg" />
+    <div class="text-header"> SERVICES </div>
+</div>
+<div class="hr-1" ></div>
+
+<div class="card border-0 text-center p-5 mb-5">
+    @if (Model != null)
+    {
+        foreach (var service in Model)
+        {
+            <h2 class="card-subtitle text-dark mt-2 mb-2"> @service.Name</h2>
+            <p class="card-text text-black-50 mb-5"> @service.Info</p>
+        }
+    }
+    else
+    {
+        <p>Our service will be provided soon.</p>
+    }
+</div>
+
+<!-- Import Page Stylesheet -->
+<link rel="stylesheet" type="text/css" href="~/Content/custom.details.css" />

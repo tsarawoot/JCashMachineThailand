@@ -6,7 +6,7 @@
     <div id="bg-parallax" class="background-parallax"></div>
     <div class="container headerBox">
         <h1 id="company-name" class="headerText">
-            J-Cash Machine(Thailand)<br />
+            J-Cash Machine (Thailand)<br />
             <span class="subHeaderText color-jcm-blue">A Global Solutions by JCM</span>
         </h1>
     </div>
@@ -36,7 +36,7 @@
                             <h3 class="card-title color-jcm-blue mb-3">Product</h3>
                             <h5 class="card-subtitle mb-3">subtitle</h5>
                             <p class="card-text">You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-                            <span class="nav-item">@Html.ActionLink("Check out!", "Product", "Home", new { @class = "btn btn-info" })</span>
+                            <span class="nav-item">@Html.ActionLink("Check out!", "Products", "Details", null, new { @class = "btn btn-info" })</span>
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                             <h3 class="card-title color-jcm-blue mb-3">Service</h3>
                             <h5 class="card-subtitle mb-3">subtitle</h5>
                             <p class="card-text">You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-                            <span class="nav-item">@Html.ActionLink("See more", "Service", "Home", new { @class = "btn btn-info" })</span>
+                            <span class="nav-item">@Html.ActionLink("See more", "Service", "Details", null, new { @class = "btn btn-info" })</span>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                             <h3 class="card-title color-jcm-blue mb-3">Career</h3>
                             <h5 class="card-subtitle mb-3">subtitle</h5>
                             <p class="card-text">You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-                            <span class="nav-item">@Html.ActionLink("Join us", "Career", "Home", new { @class = "btn btn-info" })</span>
+                            <span class="nav-item">@Html.ActionLink("Join us", "Career", "Details", null, new { @class = "btn btn-info" })</span>
                         </div>
                     </div>
                 </div>
@@ -73,17 +73,17 @@
                     <div class="card text-center border-0 bg-jcm-contact">
                         <h3 class="card-title color-jcm-blue p-3">Contact Us</h3>
                         <h5 class="card-subtitle pb-3">J-Cash Machine (Thailand) Co.,Ltd.</h5>
-                        <p>
+                        <address>
                             42 Tower, Room701, 7th Floor,<br />
                             65 Soi Sukhumvit 42 (Kluaynamthai),<br />
                             Sukhumvit Rd., Prakanong Klongtoey,<br />
                             Bangkok 10110 Thailand<br />
                             <br />
-                            t.sarawoot@jcm-thai.co.th<br />
+                            <a href="mailto:t.sarawoot@jcm-thai.co.th">t.sarawoot@jcm-thai.co.th</a><br />
                             <br />
                             Tel. +66 2 712 3155-6<br />
                             Fax. +66 2 712 3157
-                        </p>
+                        </address>
                     </div>
                 </div>
                 <div class="col-md-6 py-3">
@@ -112,50 +112,104 @@
         </div>
     </section>
 </section>
+
+<!-- use to be dispaly value on debug-->
+<div id="debug" style="position:fixed; top:100px; left:0px; height: 30px; min-width:150px; background-color:greenyellow">
+    DEBUG
+</div>
+
 <!-- Import Page Stylesheet -->
 <link rel="stylesheet" type="text/css" href="~/Content/custom.index.css" />
 
+<!-- Page scripts java, jquery  -->
 @section scripts{
-<script>
-    $(document).ready(function () {
-        //by scroll
-        $(window).scroll(function () {
+    <script>
+
+        //-- animate feature section whe first show on viewPort
+        var firstShowFeature = false;
+        //--
+
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                //dispaly page feature onscrow
+                if (firstShowFeature == false) {
+                    var featureSect = document.getElementById('feature');
+                    var isView = isAnyPartOfElementInViewport(featureSect);
+                    if (isView) {
+                        $("#product").delay(100).show(500);
+                        $("#service").delay(100).show(1000);
+                        $("#career").delay(100).show(1500);
+                        firstShowFeature = true;//first load is done
+                    }
+                }
+            });
+        });
+
+        //---
+        window.onload = function () { showFeature() };
+        function showFeature() {
             //dispaly feature
             var featureSect = document.getElementById('feature');
             var isView = isAnyPartOfElementInViewport(featureSect);
-            $('#fix-box').html(isView);
             if (isView) {
-                $("#product").show(500);
-                $("#service").show(1000);//200+400
-                $("#career").show(1500);//500+400
+                $("#product").delay(300).show(500);
+                $("#service").delay(300).show(1000);
+                $("#career").delay(300).show(1500);
+                firstShowFeature = true;//first load is done
             }
-        });
-    });
-    // https://gist.github.com/davidtheclark/5515733
-    function isAnyPartOfElementInViewport(el) {
-
-        const rect = el.getBoundingClientRect();
-        // DOMRect { x: 8, y: 8, width: 100, height: 100, top: 8, right: 108, bottom: 108, left: 8 }
-        const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
-        const windowWidth = (window.innerWidth || document.documentElement.clientWidth);
-
-        // http://stackoverflow.com/questions/325933/determine-whether-two-date-ranges-overlap
-        const vertInView = (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
-        const horInView = (rect.left <= windowWidth) && ((rect.left + rect.width) >= 0);
-
-        return (vertInView && horInView);
-    }
-
-    window.onscroll = function () { scrollFunction() };
-    function scrollFunction() {
-
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            document.getElementById("bg-parallax").style.backgroundPositionY = "-6rem";
-        } else {
-            document.getElementById("bg-parallax").style.backgroundPositionY = "0";
         }
-    }
-</script>
+
+        //---
+        // https://gist.github.com/davidtheclark/5515733
+        function isAnyPartOfElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            // DOMRect { x: 8, y: 8, width: 100, height: 100, top: 8, right: 108, bottom: 108, left: 8 }
+            const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+            const windowWidth = (window.innerWidth || document.documentElement.clientWidth);
+
+            // http://stackoverflow.com/questions/325933/determine-whether-two-date-ranges-overlap
+            const vertInView = (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
+            const horInView = (rect.left <= windowWidth) && ((rect.left + rect.width) >= 0);
+
+            return (vertInView && horInView);
+        }
+
+        //---
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("bg-parallax").style.backgroundPositionY = "-6rem";
+            } else {
+                document.getElementById("bg-parallax").style.backgroundPositionY = "0";
+            }
+        }
+    </script>
+
+    <!-- Google Map -->
+    @*<script type="text/javascript" src="~/Scripts/saraw.script.js"></script>*@
+    <script>
+        function googleMapJCMT() {
+            // The location of Uluru
+            var myLatlng = { lat: 13.7154312, lng: 100.5844659 };//J-Cash Machine (Thailand), 42Tower
+
+            // The html element to show maps
+            var mapCanvas = document.getElementById('mapArea');
+            // Create option
+            var mapOptions = {
+                zoom: 17,
+                center: myLatlng,
+                //mapTypeId: 'satellite'
+                mapTypeId: 'terrain'
+            };
+            // The map, centered at Uluru
+            var map = new google.maps.Map(mapCanvas, mapOptions);
+            // The marker, positioned at Uluru
+            var marker = new google.maps.Marker({ position: myLatlng, map: map });
+        }
+    </script>
+    <!-- API key by Sarawoot : "AIzaSyC3XVnuWyMFemxjfLs_MxF0_E-YsZW-I50" -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3XVnuWyMFemxjfLs_MxF0_E-YsZW-I50&callback=googleMapJCMT" type="text/javascript"></script>
+
 }
 
 

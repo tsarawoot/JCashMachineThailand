@@ -1,0 +1,37 @@
+﻿@model IList<JCashMachineThailand.Models.Product>
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-header">
+    <img class="img-header" src="~/Images/product-header.jpg" />
+    <div class="text-header"> PRODUCTS </div>
+</div>
+<div class="hr-1"></div>
+
+<div class="container card-columns bg-light px-md-4 pt-5">
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <div class="card hover-shadow p-4 ">
+                <div style="min-height:100px;" class="bg-secondary">
+                    <img class="card-img bg-white w-100" src="~/Images/products/@item.Image" alt="@item.Image">
+                </div>
+                <div class="card-body border-dark">
+                    <h3 id="pd-title" class="card-title">@item.Name</h3>
+                    <p class="card-text">@item.Info</p>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        < p > No product to show.</ p >
+    }
+</div>
+
+<!-- Import Page Stylesheet -->
+<link rel="stylesheet" type="text/css" href="~/Content/custom.details.css" />
+

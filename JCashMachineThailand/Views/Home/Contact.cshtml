@@ -53,3 +53,32 @@
 
 <!-- Import Page Stylesheet -->
 <link rel="stylesheet" type="text/css" href="~/Content/custom.index.css" />
+@section scripts{
+
+    <!-- Google Map -->
+    @*<script type="text/javascript" src="~/Scripts/saraw.script.js"></script>*@
+    <script>
+        function googleMapJCMT() {
+            // The location of Uluru
+            var myLatlng = { lat: 13.7154312, lng: 100.5844659 };//J-Cash Machine (Thailand), 42Tower
+            
+            // The html element to show maps
+            var mapCanvas = document.getElementById('mapArea');
+            // Create option
+            var mapOptions = {
+                zoom: 17,
+                center: myLatlng,
+                //mapTypeId: 'satellite'
+                mapTypeId: 'hybrid'
+            };
+            // The map, centered at Uluru
+            var map = new google.maps.Map(mapCanvas, mapOptions);
+            //map.setTilt(45);//only some area
+            // The marker, positioned at Uluru
+            var marker = new google.maps.Marker({ position: myLatlng, map: map });
+        }
+    </script>
+    <!-- API key by Sarawoot : "AIzaSyC3XVnuWyMFemxjfLs_MxF0_E-YsZW-I50" -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3XVnuWyMFemxjfLs_MxF0_E-YsZW-I50&callback=googleMapJCMT" type="text/javascript"></script>
+
+}

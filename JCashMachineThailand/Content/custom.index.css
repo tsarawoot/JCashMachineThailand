@@ -1,5 +1,6 @@
 ﻿body{
     width:100%;
+    max-width:1600px;
 }
 .background-parallax {
     /* Image */
@@ -18,9 +19,9 @@
     margin-left: 8%;
     width: 80vw; /*520px*/
     max-width:960px;
-    position: absolute;
+    position: relative;
     pointer-events: none;
-    top: 200px;
+    top: 6em;
     /*height: 200px;*/
     word-wrap: break-word;
     text-align: left;
@@ -28,7 +29,7 @@
 }
 
 .headerText {
-    color: #003862; /* JCM:#003862 */
+    color: #005DA3; /* JCM:#003862 */
     position: absolute;
     /*font-family: Arial, Helvetica, sans-serif;*/
     font-family: poppins-semibold,poppins,sans-serif;
@@ -39,7 +40,7 @@
     animation: moveup 2s;
     -webkit-animation: moveup 2s;
     transition-duration: 0.5s;
-    text-shadow: 1px 1px 3px #000000;
+    text-shadow: 1px 1px 3px #ffffff;
 }
 
 .subHeaderText {
@@ -83,8 +84,7 @@
         font-size: 16px;
     }
     .headerBox {
-        /*width: 260px;*/
-        top: 160px;
+        top: 4em;
     }
     .background-parallax {
         height: 220px;
@@ -99,9 +99,6 @@
     .subHeaderText {
         font-size: 11px;
     }
-    .headerBox {
-        /*width: 260px;*/
-    }
     .background-parallax{
         height:180px;
     }
@@ -112,10 +109,6 @@
     .headerText {
         font-size: 28px;
         /*color: chartreuse;*/
-    }
-    .headerBox {
-        /*width: 260px;*/
-        top:160px;
     }
     .background-parallax {
         height: 180px;
@@ -134,11 +127,11 @@
 }
 
 .bg-jcm-blue {
-    background-color: #003862;
+    background-color: #005DA3;
 }
 .color-jcm-blue { /*JCM from .Ai = #005DA3*/
-    color: #003862;
-    /*color:blue;*/
+    /*color: #003862;*/
+    color: #005DA3;
 }
 .bg-jcm-contact {
     background-color: #EAF5F7;

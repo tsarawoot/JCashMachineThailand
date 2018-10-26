@@ -173,6 +173,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\about-career.jpg" />
+    <Content Include="Images\about-company.jpg" />
     <Content Include="Images\bg.jpg" />
     <Content Include="Images\career.jpg" />
     <Content Include="Images\customer\ais.jpg" />

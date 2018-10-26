@@ -63,15 +63,12 @@ namespace JCashMachineThailand.Models
                 Code = 4074,
                 Name = "iVIZION",
                 Image = "ivizion.png",
-                Info = "Some product information"
-            };
-            //DBV-500
-            Product dbv500 = new Product
-            {
-                Code = 4104,
-                Name = "DBV-500",
-                Image = "dbv500.png",
-                Info = "Some product information"
+                Info = "The iVIZION is make change gamming industry to the better technologies." +
+                " Advanced Contact Image Sensor(CIS) data capture," +
+                " Fastest “note to note” processing speed at 2.7 seconds," +
+                " 99 %+ acceptance rate," +
+                " Enhanced optical & mechanical security features / anti - stringing."
+
             };
             //DBV-400
             Product dbv400 = new Product
@@ -79,7 +76,21 @@ namespace JCashMachineThailand.Models
                 Code = 4107,
                 Name = "DBV-400",
                 Image = "dbv400.png",
-                Info = "Some product information"
+                Info = "The newly Bill Acceptor of Vending Market and wide range application auto payment." +
+                " Cash box capacity options of 300 / 500 / 1000 notes," +
+                " Under 2 seconds for note - to - note acceptance," +
+                " 6 wavelengths of high - precision optical sensors,"
+            };
+            //DBV-500
+            Product dbv500 = new Product
+            {
+                Code = 4104,
+                Name = "DBV-500",
+                Image = "dbv500.png",
+                Info = "The new product best mactch for Vending and Kiosk paymet from JCM. " +
+                " Cash box capacity options of 500 / 1000 / 1500 notes, " +
+                " Newly designed centering mechanism, " +
+                " Under 2 seconds for note - to - note acceptance."
             };
             //VEGA
             Product vega = new Product
@@ -87,7 +98,10 @@ namespace JCashMachineThailand.Models
                 Code = 4064,
                 Name = "VEGA",
                 Image = "vega.png",
-                Info = "Vega is the compact bill acceptor with a lockable removable cash box and flexible options."
+                Info = "Vega is the compact bill acceptor with a lockable removable cash box and flexible options." +
+                " Optional programmable Bill Recycle," +
+                " Up to 1000 notes cash box capacity."
+                
             };
             //PUB
             Product pub = new Product
@@ -95,7 +109,10 @@ namespace JCashMachineThailand.Models
                 Code = 4045,
                 Name = "PUB-7/11",
                 Image = "pub.png",
-                Info = "Some product information"
+                Info = "The compact and boxless product for small machine with " +
+                "- 7 Coler LED face plate" +
+                "- DIP switch selectable interfaces" +
+                "- Built in Andi-Fishing protection"
             };
             //-------------------
             //return product list

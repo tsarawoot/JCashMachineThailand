@@ -175,6 +175,13 @@
     </Content>
     <Content Include="Images\bg.jpg" />
     <Content Include="Images\career.jpg" />
+    <Content Include="Images\customer\ais.jpg" />
+    <Content Include="Images\customer\dtac.jpg" />
+    <Content Include="Images\customer\mrt.png" />
+    <Content Include="Images\customer\pea.png" />
+    <Content Include="Images\customer\powergold.png" />
+    <Content Include="Images\customer\scb.jpg" />
+    <Content Include="Images\customer\true.png" />
     <Content Include="Images\JCM-Global-logo.ico" />
     <Content Include="Images\JCM_Global_RGB - email signature.png" />
     <Content Include="Images\product-header.jpg" />
@@ -189,6 +196,9 @@
     <Content Include="Images\products\vega.png" />
     <Content Include="Images\service-header.jpg" />
     <Content Include="Images\service.jpg" />
+    <Content Include="Images\team\left.jpg" />
+    <Content Include="Images\team\r-1.jpg" />
+    <Content Include="Images\team\r-2.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />

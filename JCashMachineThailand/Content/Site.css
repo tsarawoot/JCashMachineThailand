@@ -23,6 +23,22 @@ textarea {
     max-width: 280px;
 }
 
-.text-blue{
-    color:blue;
+.bg-jcm-blue {
+    /*background-color: #005DA3;*/ /*JCM from .Ai = #005DA3*/
+    background-color: #03549d; /* from JCM-HQ: #0c80e9 , #03549d*/
+}
+
+.color-jcm-blue {
+    /*color: #005DA3;*/ /*JCM from .Ai = #005DA3*/
+    color: #03549d; /* from JCM-HQ: #0c80e9 , #03549d*/
+}
+
+.bg-jcm-contact {
+    background-color: #EAF5F7;
+}
+
+.navbar{
+    top:0;
+    transition:1s;
+    z-index:500;
 }

@@ -4,8 +4,192 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-
-    <h2>Career</h2>
-
+<div class="container-header">
+    <img class="img-header" src="~/Images/about-career.jpg" />
+    <div class="text-header"> @ViewBag.Title </div>
 </div>
+<div class="hr-1 bg-jcm-blue"></div>
+
+<div class="card border-0 text-center p-3 mb-3">
+    <!-- Company Background -->
+    <h2 class="card-subtitle text-dark mt-2 mb-2">Join Our Team</h2>
+    <h6 class="card-subtitle text-black-50 px-md-5 mt-2">
+        Be an our world wide team, don't hesitate to send us your resume following position.
+    </h6>
+    <div class="card-text text-black-50 mb-5 px-md-5">
+        <table id="recruitTbl" class="display w-100 border-0">
+            <thead>
+                <tr class="bg-light">
+                    <th>Position</th>
+                    <th>Job Summary</th>
+                    <th>Qualifications</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Software Engineer</td>
+                    <td>
+                        <ul style="text-align:left">
+                            <li>Software and related softare development of "Bill Acceptor" that discern Banknote of all over the world.</li>
+                            <li>Design, develop and maintain software various product of JCM.</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul style="text-align:left">
+                            <li>Above 23 years old</li>
+                            <li>1 Year of workig experiences in software development is perferred</li>
+                            <li>Fresh graduates are also welcomed.</li>
+                            <li>Posseses skill in C Programming</li>
+                            <li>Bechelor Degree inElectrical Engineering , Eletronics Engineering , ComputerEngineering Computer Science or related field</li>
+                            <li>Thai only</li>
+                            <li>English proficiencey is conversation level is perferred.</li>
+                            <li>Machanic/Electronic engineer is welcome.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card border-0 text-center p-3 mb-3">
+    <!-- Team Member -->
+    <hr />
+    <h2 class="card-subtitle text-dark mt-2 mb-2">The TEAM</h2>
+    <h5 class="card-text text-black-50 mb-3">
+        Right here are the team who create software to driver the Banknotes Acceptor for world wide currency.
+    </h5>
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <div class="card">
+                    <img src="~/Images/team/left.jpg" class="card-img" />
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="card">
+                        <img src="~/Images/team/r-1.jpg" class="card-img" />
+                    </div>
+                </div>
+                <div class="row pt-lg-2">
+                    <div class="card">
+                        <img src="~/Images/team/r-2.jpg" class="card-img" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Member Card |Rejected by Mamager This will not public|-->
+        <div id="teamMember" class="card-columns mt-3" hidden>
+            <div class="card text-left">
+                <img class="card-img" src="~/Images/team/kuroiwa.jpg" />
+                <div class="card-body">
+                    <h5 class="card-subtitle">Koji Kuroiwa</h5>
+                    <p class="card-text">Manager</p>
+                </div>
+            </div>
+            <div class="card text-left">
+                <img class="card-img" src="~/Images/team/nt.jpg" />
+                <div class="card-body">
+                    <h5 class="card-subtitle">Nantawan - On</h5>
+                    <p class="card-text">Assistan Mngr - The Adventurer</p>
+                </div>
+            </div>
+            <div class="card text-left">
+                <img class="card-img" src="~/Images/team/st.gif" />
+                <div class="card-body">
+                    <h5 class="card-subtitle">Sarawoot - Woot</h5>
+                    <p class="card-text">Engineer Chief - Papa's The 9 </p>
+                </div>
+            </div>
+            <div class="card text-left">
+                <img class="card-img" src="~/Images/team/is.jpg" />
+                <div class="card-body">
+                    <h5 class="card-subtitle">Intanil - Noom</h5>
+                    <p class="card-text">Engineer Sub Chief - The Roulette</p>
+                </div>
+            </div>
+            <div class="card text-left">
+                <img class="card-img" src="~/Images/team/wp.jpg" />
+                <div class="card-body">
+                    <h5 class="card-subtitle">Wichit - Tao</h5>
+                    <p class="card-text">Engineering Sub Chief - The Library of Thing </p>
+                </div>
+            </div>
+            <div class="card text-left">
+                <img class="card-img" src="~/Images/team/sj.jpg" />
+                <div class="card-body">
+                    <h5 class="card-subtitle">Saranee - Kae</h5>
+                    <p class="card-text">Engineer - CIS slayer</p>
+                </div>
+            </div>
+            <div class="card text-left">
+                <img class="card-img" src="~/Images/team/wr.jpg" />
+                <div class="card-body">
+                    <h5 class="card-subtitle">Wittawat - Mob</h5>
+                    <p class="card-text">Engineer - The One for All-Product </p>
+                </div>
+            </div>
+            <div class="card text-left">
+                <img class="card-img" src="~/Images/team/ag.jpg" />
+                <div class="card-body">
+                    <h5 class="card-subtitle">Aritouch - Joe</h5>
+                    <p class="card-text">Engineer - The Gamer </p>
+                </div>
+            </div>
+            <div class="card text-left">
+                <img class="card-img" src="~/Images/team/lk.jpg" />
+                <div class="card-body">
+                    <h5 class="card-subtitle">Lalita - Parn</h5>
+                    <p class="card-text">Engineer - I Think It's OK!</p>
+                </div>
+            </div>
+            <div class="card text-left">
+                <img class="card-img" src="~/Images/team/nj.jpg" />
+                <div class="card-body">
+                    <h5 class="card-subtitle">Nanut - Nut</h5>
+                    <p class="card-text">Engineer UBA, iPRO, TBV - BNK Lover</p>
+                </div>
+            </div>
+            <div class="card text-left">
+                <img class="card-img" src="~/Images/team/pp.jpg" />
+                <div class="card-body">
+                    <h5 class="card-subtitle">Phathomporn - Pe</h5>
+                    <p class="card-text">Engineer - Yah! GG4EVA</p>
+                </div>
+            </div>
+            <div class="card text-left">
+                <img class="card-img" src="~/Images/team/wb.jpg" />
+                <div class="card-body">
+                    <h5 class="card-subtitle">Watsana</h5>
+                    <p class="card-text">Novice Engineer - ?????? </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Import Page Stylesheet -->
+<link rel="stylesheet" type="text/css" href="~/Content/custom.details.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" />
+
+@section scripts{
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+
+    <script>
+            $.extend($.fn.dataTable.defaults, {
+                responsive: true
+            });
+
+            $(document).ready(function () {
+                $('#recruitTbl').DataTable({
+                    "paging": false,
+                    "ordering": false,
+                    "info": false
+                });
+            });
+    </script>
+}

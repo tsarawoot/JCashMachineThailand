@@ -15,14 +15,14 @@ namespace JCashMachineThailand.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Content creation by View";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Content creation by View";
 
             return View();
         }

@@ -14,11 +14,11 @@
 </head>
 <body>
     <!--## Navigation Bar ##-->
-    <nav class="navbar navbar-expand-md navbar-light bg-white">
+    <nav id="navbar" class="navbar navbar-expand-md navbar-light bg-white">
         <!-- ::Brand -->
         <!-- <a class="navbar-brand" href="/Home/About">[ JCM-Thailand ]</a> -->
         <a class="navbar-brand" href="/Home/Index">
-            <img src="~/Images/JCM_Global_RGB - email signature.png" />
+            <img id="navbar-img" src="~/Images/JCM_Global_RGB - email signature.png" />
         </a>
         <!-- ::Toggler/collapsibe Button -->
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navMenu">
@@ -49,7 +49,9 @@
         @RenderBody()
         <hr />
         <footer>
-            <p class="px-5">&copy; @DateTime.Now.Year - Copyright | J-Cash Machine (Thailand).Co.,Ltd.</p>
+            <p class="px-5">&copy; @DateTime.Now.Year - Copyright | J-Cash Machine (Thailand).Co.,Ltd. 
+            | @ViewContext.Controller.GetType().Assembly.GetName().Version</p>
+            
         </footer>
     </div>
     <!--## Script Import ##-->

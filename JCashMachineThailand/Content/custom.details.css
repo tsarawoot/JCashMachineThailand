@@ -21,7 +21,7 @@
     width: 100%;
     top: 20%;
     height: 70%;
-    opacity: 0.6;
+    opacity: 0.8;
     background-color: black;
     color:white;
 }
@@ -29,7 +29,7 @@
 .hr-1 {
     height: 10px;
     width: 100%;
-    background-color: #005DA3;
+    /*background-color: #005DA3;*/
 }
 
 .hover-shadow {
@@ -44,9 +44,17 @@
     transition:0.9s;
 }
 
+
+#customerList, #teamMember {
+    column-count: 4;
+}
+
 @media (max-width: 991.98px) {
     .card-columns {
         column-count: 2;
+    }
+    #customerList, #teamMember {
+        column-count: 3;
     }
 }
 
@@ -54,5 +62,8 @@
 @media (max-width: 767.98px) {
     .card-columns {
         column-count: 1;
+    }
+    #customerList, #teamMember {
+        column-count: 2;
     }
 }

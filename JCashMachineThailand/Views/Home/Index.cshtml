@@ -5,9 +5,9 @@
     <!-- parallax baground-->
     <div id="bg-parallax" class="background-parallax">
         <div class="container headerBox">
-            <h1 id="company-name" class="headerText">
+            <h1 id="company-name" class="headerText color-jcm-blue">
                 J-Cash Machine (Thailand)<br />
-                <span class="subHeaderText color-jcm-blue">A Global Solutions by JCM</span>
+                <span class="subHeaderText">A Global Solutions by JCM</span>
             </h1>
         </div>
     </div>
@@ -19,9 +19,10 @@
             <div class="container-fluid text-white">
                 <h1 id="whoweare" class="font-smoothing" style="font-weight:bold">Who We Are?</h1>
                 <p class="p-15 p-3">
-                    JCMThailand provides a wide range of products to meet the needs of every customer.
-                    From initial design to final quality assurance processes, we make sure our goods are reliable and exceptional.
-                    We’re proud to be one of the best-known names in the industry. Get in touch to see how you can benefit from our products.
+                    J-CASH MACHINE(THAILAND) CO.,LTD. is subsidiary of JAPAN CASH MACHINE CO.,LTD.
+                    established since 2007 to develop software for Bill Validator (Banknotes Acceptor)
+                    under the "JCM" brand, we produce embedded software to recognize variety of banknotes series in world wide currency.
+                    provide JCM Bill Validator in both gamming and commercial market match the need of our customer.
                 </p>
             </div>
         </section>
@@ -36,8 +37,11 @@
                         <img class="card-img" src="~/Images/product.jpg" />
                         <div class="card-body">
                             <h3 class="card-title color-jcm-blue mb-3">Product</h3>
-                            <h5 class="card-subtitle mb-3">subtitle</h5>
-                            <p class="card-text">You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+                            <h5 class="card-subtitle mb-3">Bill Acceptor</h5>
+                            <p class="card-text">
+                                Over 60 years of JCM, we proudly present high quality product from Japan and
+                                alway going forward improve our product with high technology.
+                            </p>
                             <span class="nav-item">@Html.ActionLink("Check out!", "Products", "Details", null, new { @class = "btn btn-info" })</span>
                         </div>
                     </div>
@@ -47,8 +51,11 @@
                         <img class="card-img" src="~/Images/service.jpg" />
                         <div class="card-body">
                             <h3 class="card-title color-jcm-blue mb-3">Service</h3>
-                            <h5 class="card-subtitle mb-3">subtitle</h5>
-                            <p class="card-text">You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+                            <h5 class="card-subtitle mb-3">Professional Team Service </h5>
+                            <p class="card-text">
+                                More than decade, we created over thousand quality firmware to the market and
+                                assists technical information to the global market by professional team.
+                            </p>
                             <span class="nav-item">@Html.ActionLink("See more", "Service", "Details", null, new { @class = "btn btn-info" })</span>
                         </div>
                     </div>
@@ -58,8 +65,10 @@
                         <img class="card-img" src="~/Images/Career.jpg" />
                         <div class="card-body">
                             <h3 class="card-title color-jcm-blue mb-3">Career</h3>
-                            <h5 class="card-subtitle mb-3">subtitle</h5>
-                            <p class="card-text">You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+                            <h5 class="card-subtitle mb-3">Together at JCM-T</h5>
+                            <p class="card-text">
+                                The machine cannot work by itself, so we need strong teamwork to drive it into global money handling.
+                            </p>
                             <span class="nav-item">@Html.ActionLink("Join us", "Career", "Details", null, new { @class = "btn btn-info" })</span>
                         </div>
                     </div>
@@ -109,16 +118,16 @@
                 </div>
             </div>
             <div id="mapArea" class="row p-0 m-0 bg-secondary w-100" style="height:400px; word-break:break-all  ">
-                <p>JCM-T map</p>
+                <p>JCM-T google map</p>
             </div>
         </div>
     </section>
 </section>
 
 <!-- use to be dispaly value on debug-->
-<div id="debug" style="position:fixed; top:100px; left:0px; height: 30px; min-width:150px; background-color:greenyellow">
+@*<div id="debug" style="position:fixed; top:100px; left:0px; height: 30px; min-width:150px; background-color:greenyellow">
     DEBUG
-</div>
+</div>*@
 
 <!-- Import Page Stylesheet -->
 <link rel="stylesheet" type="text/css" href="~/Content/custom.index.css" />
@@ -188,7 +197,6 @@
     </script>
 
     <!-- Google Map -->
-    @*<script type="text/javascript" src="~/Scripts/saraw.script.js"></script>*@
     <script>
         function googleMapJCMT() {
             // The location of Uluru

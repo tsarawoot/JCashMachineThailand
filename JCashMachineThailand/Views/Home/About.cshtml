@@ -18,10 +18,14 @@
         products of <span class="font-italic">Japan Cash Machine Co.,Ltd.(JCM)</span><br />
         We served over hundred of currency, build over 200 software yearly.
         Cooperate development with other JCM group office in Japan(Tokyo/Osaka), USA(Lasvegas), Germany(Dusseldorf) and many more world wide support team.
+        <br /><br />
+        <a href="http://www.jcm-hq.co.jp/" class="badge badge-primary">JCM-HQ</a>
+        <a href="https://am-en.jcmglobal.com/" class="badge badge-primary">JCM-America</a>
+        <a href="https://emea-en.jcmglobal.com/" class="badge badge-primary">JCM-Europe</a>
     </p>
 </div>
-    <!-- Distributor -->
-<div class="card border-0 text-center p-3 mb-3 bg-light">
+<!-- Distributor : order to removed by JCM-T Manager -->
+<div class="card border-0 text-center p-3 mb-3 bg-light manager-remove">
     <h2 class="card-subtitle text-dark mt-2 mb-2">Distributor</h2>
     <div class="card-text text-black-50 mb-5">
         <table id="distributor" class="display nowrap w-100 border-0">
@@ -45,8 +49,8 @@
     </div>
 </div>
 
-    <!-- Customer -->
-<div class="card border-0 text-center p-3 mb-3">
+<!-- Customer :order to removed by JCM-T Manager -->
+<div class="card border-0 text-center p-3 mb-3 manager-remove" >
     <h2 class="card-subtitle text-dark mt-2 mb-2">Customer</h2>
     <p>The example our Thailand customer show below.</p>
     <div id="customerList" class="card-columns">
@@ -73,26 +77,26 @@
         </div>
     </div>
 </div>
-    <!-- Import Page Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="~/Content/custom.details.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" />
+<!-- Import Page Stylesheet -->
+<link rel="stylesheet" type="text/css" href="~/Content/custom.details.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" />
 
-    @section scripts{
-        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+@section scripts{
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
 
-        <script>
-            $.extend($.fn.dataTable.defaults, {
-                responsive: true
+    <script>
+        $.extend($.fn.dataTable.defaults, {
+            responsive: true
+        });
+
+        $(document).ready(function () {
+            $('#distributor').DataTable({
+                "paging": false,
+                "ordering": false,
+                "info": false
             });
-
-            $(document).ready(function () {
-                $('#distributor').DataTable({
-                    "paging": false,
-                    "ordering": false,
-                    "info": false
-                });
-            });
-        </script>
-    }
+        });
+    </script>
+}

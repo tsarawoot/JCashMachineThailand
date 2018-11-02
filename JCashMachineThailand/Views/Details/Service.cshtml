@@ -8,7 +8,7 @@
     <img class="img-header img-rotate-180" src="~/Images/service-header.jpg" />
     <div class="text-header"> SERVICES </div>
 </div>
-<div class="hr-1 bg-jcm-blue" ></div>
+<div class="hr-1 bg-jcm-blue"></div>
 
 <div class="card border-0 text-center p-5 mb-5">
     @if (Model != null)
@@ -28,12 +28,76 @@
     <h3 class="text-info">How to get our service?</h3>
     <p class="text-black-50">
         To request our service, we have our distributors in your area to provide you by regions.<br />
-        <a class="btn btn-success m-2" href="/home/about" role="button">
+        <a class="btn btn-success m-2 manager-remove" href="/home/about" role="button">
+            <span class="fa fa-fw fa-search"></span>Find our distributor
+        </a>
+        <a id="showVendor" class="btn btn-success m-2" role="button">
             <span class="fa fa-fw fa-search"></span>Find our distributor
         </a>
     </p>
+    <!-- customer info -->
+    <!-- The Modal -->
+    <div id="vendorModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content" style="min-width:410px">
+            <span class="close">&times;</span>
+            <table class="display nowrap w-100  border-0">
+                <thead>
+                    <tr class="bg-light">
+                        <th>Country</th>
+                        <th>Name</th>
+                        <th>Contact</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Thailand</td>
+                        <td>Retailing Technology Co., Ltd.<br /> ( RTECH )</td>
+                        <td>info@rtech.co.th <br />(+66)2-363-7502-7</td>
+                        <td><a href="http://www.rtech.co.th">www.rtech.co.th</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 <!-- Import Page Stylesheet -->
 <link rel="stylesheet" type="text/css" href="~/Content/custom.details.css" />
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+
+@section scripts{
+    
+    <script>
+        //from :https://www.w3schools.com/howto/howto_css_modals.asp
+
+        // Get the modal
+        var modal = document.getElementById('vendorModal');
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("showVendor");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+}

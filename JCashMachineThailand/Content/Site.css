@@ -42,3 +42,7 @@ textarea {
     transition:1s;
     z-index:500;
 }
+
+.manager-remove{
+    display:none;/* order to removed by jcm-t manager*/
+}

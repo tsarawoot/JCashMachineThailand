@@ -1,4 +1,5 @@
-﻿@{
+﻿@model JCashMachineThailand.Models.ModelContactEmail
+@{
     ViewBag.Title = "Contact";
 }
 
@@ -28,23 +29,29 @@
                     </div>
                 </div>
                 <div class="col-md-6 py-3">
-                    <form class=" mx-xl-5 pt-3">
-                        <div class="form-group">
-                            <div class="form-row justify-content-center">
-                                <div class="col-md">
-                                    <input type="text" class="form-control mb-2 max-width-768px btn-outline-dark" id="name" placeholder="Name" />
-                                </div>
-                                <div class="col-md">
-                                    <input type="email" class="form-control mb-2 max-width-768px btn-outline-dark" id="email" placeholder="Email" />
-                                </div>
+                    @using (Html.BeginForm("Contact","Home"))
+                    {
+                        @Html.AntiForgeryToken()
+                    <div class="form-group mx-xl-5 pt-3">
+                        <div class="form-row justify-content-center">
+                            <div class="col-md">
+                                @Html.TextBoxFor(m => m.FromName, new { @class = "form-control mb-2 max-width-768px btn-outline-dark", placeholder = Html.DisplayNameFor(m => m.FromName) })
+                                @Html.ValidationMessageFor(m => m.FromName)
                             </div>
-                            <input type="text" class="form-control mb-2 max-width-768px btn-outline-dark" id="subject" placeholder="Subject" />
-                            <input type="text" class="form-control mb-2 max-width-768px btn-outline-dark" id="phone" placeholder="Phone" />
-                            <input type="text" class="form-control mb-2 max-width-768px btn-outline-dark" id="address" placeholder="Address" />
-                            <textarea class="form-control mb-3 max-width-768px btn-outline-dark" id="message" rows="3" placeholder="Message"></textarea>
-                            <button type="submit" class="btn-dark w-100">Send</button>
+                            <div class="col-md">
+                                @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control mb-2 max-width-768px btn-outline-dark", placeholder = Html.DisplayNameFor(m => m.FromEmail) })
+                                @Html.ValidationMessageFor(m => m.FromEmail)
+                            </div>
                         </div>
-                    </form>
+                        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control mb-2 max-width-768px btn-outline-dark", placeholder = Html.DisplayNameFor(m => m.PhoneNumber) })
+                        @Html.ValidationMessageFor(m => m.PhoneNumber)
+                        @Html.TextBoxFor(m => m.Subject, new { @class = "form-control mb-2 max-width-768px btn-outline-dark", placeholder = Html.DisplayNameFor(m => m.Subject) })
+                        @Html.ValidationMessageFor(m => m.Subject)
+                        @Html.TextAreaFor(m => m.Message, new { @class = "form-control mb-3 max-width-768px btn-outline-dark", @rows = 3, placeholder = Html.DisplayNameFor(m => m.Message) })
+                        @Html.ValidationMessageFor(m => m.Message)
+                        <button type="submit" class="btn-dark w-100">Send</button>
+                    </div>
+                    }
                 </div>
             </div>
         </div>

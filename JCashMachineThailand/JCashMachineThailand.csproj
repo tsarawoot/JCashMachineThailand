@@ -154,6 +154,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ModelContactEmail.cs" />
     <Compile Include="Models\ModelDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -306,7 +307,8 @@
     <Content Include="Content\bootstrap\bootstrap.scss" />
     <Content Include="Content\bootstrap\bootstrap-reboot.scss" />
     <Content Include="Content\bootstrap\bootstrap-grid.scss" />
-    <None Include="Properties\PublishProfiles\JCashMachineThailand.pubxml" />
+    <None Include="Properties\PublishProfiles\JCashMachineThailand - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\JCashMachineThailand - Local Folder.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -352,6 +354,7 @@
     <Content Include="Views\Details\Products.cshtml" />
     <Content Include="Views\Details\Service.cshtml" />
     <Content Include="Views\Details\Career.cshtml" />
+    <Content Include="Views\Home\ContactSent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

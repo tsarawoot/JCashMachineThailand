@@ -17,6 +17,7 @@ namespace JCashMachineThailand.Controllers
     {
         public ActionResult Index()
         {
+            RunQuestionBot();
             return View();
         }
 
@@ -30,7 +31,7 @@ namespace JCashMachineThailand.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Content creation by View";
-
+            RunQuestionBot();
             return View();
         }
 
@@ -39,6 +40,13 @@ namespace JCashMachineThailand.Controllers
         {
             if (ModelState.IsValid)
             {
+                //auto contact bot checking
+                var ans = Convert.ToInt32(System.Web.HttpContext.Current.Session["Ans"]);
+                if (model.AnswerBot != ans) {
+                    ModelState.AddModelError("AnswerBot", "Correct answer is required");
+                    return View(model);
+                }
+
                 //apply email sending process
                 var body = "<p>Email From: {0} ({1}, {2})</p><p>Message:</p><p>{3}</p>";
                 var message = new MailMessage();
@@ -91,6 +99,20 @@ namespace JCashMachineThailand.Controllers
             ViewBag.ContactResult = TempData["submitResult"];
             ViewBag.logFail = TempData["logFail"];//if can't write log to file when Error of Email sending
             return View();
+        }
+
+        private void RunQuestionBot()
+        {
+            Random rnd = new Random();
+
+            var valA = rnd.Next(DateTime.Now.Millisecond);
+            var valB = rnd.Next(DateTime.Now.Millisecond); 
+            var Ans = valA + valB;
+
+            System.Web.HttpContext.Current.Session["valA"] = valA;
+            System.Web.HttpContext.Current.Session["valB"] = valB;
+            System.Web.HttpContext.Current.Session["Ans"] = Ans;
+
         }
     }
 }

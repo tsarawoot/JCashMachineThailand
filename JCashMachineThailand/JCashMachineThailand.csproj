@@ -187,6 +187,7 @@
     <Content Include="Images\customer\true.png" />
     <Content Include="Images\JCM-Global-logo.ico" />
     <Content Include="Images\JCM_Global_RGB - email signature.png" />
+    <Content Include="Images\map\JCM-T Map.jpg" />
     <Content Include="Images\product-header.jpg" />
     <Content Include="Images\product.jpg" />
     <Content Include="Images\products\dbv400.png" />
@@ -324,6 +325,7 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\siteScripts.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />

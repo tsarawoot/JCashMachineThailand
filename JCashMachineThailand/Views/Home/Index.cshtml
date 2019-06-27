@@ -36,7 +36,7 @@
             <div class="row p-0 m-0">
                 <div class="col-md-4 w-100">
                     <div id="product" class="card border-0 h-100">
-                        <img class="card-img" src="~/Images/product.jpg" />
+                        <a href="@Url.Action("Products","Details")"><img class="card-img" src="~/Images/product.jpg" alt="JCM notes acceptor" /></a>
                         <div class="card-body">
                             <h3 class="card-title color-jcm-blue mb-3">Product</h3>
                             @*<h5 class="card-subtitle mb-3">Bill Acceptor</h5>*@
@@ -49,7 +49,8 @@
                 </div>
                 <div class="col-md-4">
                     <div id="service" class="card border-0 h-100">
-                        <img class="card-img" src="~/Images/service.jpg" />
+                        <a href="@Url.Action("Service", "Details")"><img class="card-img" src="~/Images/service.jpg" /></a>
+                        
                         <div class="card-body">
                             <h3 class="card-title color-jcm-blue mb-3">Service</h3>
                             @*<h5 class="card-subtitle mb-3">Professional Team Service </h5>*@
@@ -62,7 +63,8 @@
                 </div>
                 <div class="col-md-4">
                     <div id="career" class="card border-0 h-100">
-                        <img class="card-img" src="~/Images/Career.jpg" />
+                        <a href="@Url.Action("Career", "Details")"><img class="card-img" src="~/Images/Career.jpg" /></a>
+                        
                         <div class="card-body">
                             <h3 class="card-title color-jcm-blue mb-3">Career</h3>
                             @*<h5 class="card-subtitle mb-3">Together at JCM-T</h5>*@
@@ -101,31 +103,39 @@
                     @using (Html.BeginForm("Contact", "Home"))
                     {
                         @Html.AntiForgeryToken()
-                        <div class="form-group mx-xl-5 pt-3">
-                            <div class="form-row justify-content-center">
-                                <div class="col-md">
-                                    @Html.TextBoxFor(m => m.FromName, new { @class = "form-control mb-2 max-width-768px btn-outline-dark", placeholder = Html.DisplayNameFor(m => m.FromName) })
-                                    @Html.ValidationMessageFor(m => m.FromName)
-                                </div>
-                                <div class="col-md">
-                                    @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control mb-2 max-width-768px btn-outline-dark", placeholder = Html.DisplayNameFor(m => m.FromEmail) })
-                                    @Html.ValidationMessageFor(m => m.FromEmail)
-                                </div>
+                    <div class="form-group mx-xl-5 pt-3">
+                        <div class="form-row justify-content-center">
+                            <div class="col-md">
+                                @Html.TextBoxFor(m => m.FromName, new { @class = "form-control mb-2 max-width-768px btn-outline-dark", placeholder = Html.DisplayNameFor(m => m.FromName) })
+                                @Html.ValidationMessageFor(m => m.FromName)
                             </div>
-                            @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control mb-2 max-width-768px btn-outline-dark", placeholder = Html.DisplayNameFor(m => m.PhoneNumber) })
-                            @Html.ValidationMessageFor(m => m.PhoneNumber)
-                            @Html.TextBoxFor(m => m.Subject, new { @class = "form-control mb-2 max-width-768px btn-outline-dark", placeholder = Html.DisplayNameFor(m => m.Subject) })
-                            @Html.ValidationMessageFor(m => m.Subject)
-                            @Html.TextAreaFor(m => m.Message, new { @class = "form-control mb-3 max-width-768px btn-outline-dark", @rows = 3, placeholder = Html.DisplayNameFor(m => m.Message) })
-                            @Html.ValidationMessageFor(m => m.Message)
-                            <button type="submit" class="btn-dark w-100">Send</button>
+                            <div class="col-md">
+                                @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control mb-2 max-width-768px btn-outline-dark", placeholder = Html.DisplayNameFor(m => m.FromEmail) })
+                                @Html.ValidationMessageFor(m => m.FromEmail)
+                            </div>
                         </div>
+                        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control mb-2 max-width-768px btn-outline-dark", placeholder = Html.DisplayNameFor(m => m.PhoneNumber) })
+                        @Html.ValidationMessageFor(m => m.PhoneNumber)
+                        @Html.TextBoxFor(m => m.Subject, new { @class = "form-control mb-2 max-width-768px btn-outline-dark", placeholder = Html.DisplayNameFor(m => m.Subject) })
+                        @Html.ValidationMessageFor(m => m.Subject)
+                        @Html.TextAreaFor(m => m.Message, new { @class = "form-control mb-3 max-width-768px btn-outline-dark", @rows = 3, placeholder = Html.DisplayNameFor(m => m.Message) })
+                        @Html.ValidationMessageFor(m => m.Message)
+                        <br />
+                        <p>
+                            Please answer below <br />
+                            What is the total of <b>@System.Web.HttpContext.Current.Session["valA"]</b> and <b>@System.Web.HttpContext.Current.Session["valB"]</b>?
+                        </p>
+                        @Html.TextBoxFor(m => m.AnswerBot, new { @class = "form-control mb-2 max-width-768px btn-outline-dark", placeholder = "Please fill answer number" })
+                        @Html.ValidationMessageFor(m => m.AnswerBot)
+                        <br />
+                        <button type="submit" class="btn-dark w-100">Send</button>
+                    </div>
                     }
                 </div>
             </div>
-            <div id="mapArea" class="row p-0 m-0 bg-secondary w-100" style="height:400px; word-break:break-all  ">
+            @*<div id="mapArea" class="row p-0 m-0 bg-secondary w-100" style="height:400px; word-break:break-all  ">
                 <p>JCM-T google map</p>
-            </div>
+            </div>*@
         </div>
     </section>
 </section>
@@ -201,30 +211,6 @@
             }
         }
     </script>
-
-    <!-- Google Map -->
-    <script>
-        function googleMapJCMT() {
-            // The location of Uluru
-            var myLatlng = { lat: 13.7154312, lng: 100.5844659 };//J-Cash Machine (Thailand), 42Tower
-
-            // The html element to show maps
-            var mapCanvas = document.getElementById('mapArea');
-            // Create option
-            var mapOptions = {
-                zoom: 17,
-                center: myLatlng,
-                //mapTypeId: 'satellite'
-                mapTypeId: 'terrain'
-            };
-            // The map, centered at Uluru
-            var map = new google.maps.Map(mapCanvas, mapOptions);
-            // The marker, positioned at Uluru
-            var marker = new google.maps.Marker({ position: myLatlng, map: map });
-        }
-    </script>
-    <!-- API key by Sarawoot : "AIzaSyC3XVnuWyMFemxjfLs_MxF0_E-YsZW-I50" -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3XVnuWyMFemxjfLs_MxF0_E-YsZW-I50&callback=googleMapJCMT" type="text/javascript"></script>
 
 }
 

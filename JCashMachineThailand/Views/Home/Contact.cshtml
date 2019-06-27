@@ -1,6 +1,6 @@
 ﻿@model JCashMachineThailand.Models.ModelContactEmail
 @{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "Bangkok";
 }
 
 <div class="container">
@@ -8,9 +8,14 @@
     <section id="contact">
         <div class="container-fluid p-md-5">
             <div class="row  p-0 m-0 bg-jcm-contact">
-                <div id="mapArea" class="row p-0 m-0 bg-secondary w-100" style="height:400px; word-break:break-all  ">
-                    <p>JCM-T map</p>
+                <div class="img-thumbnail">
+                    <a href="https://goo.gl/maps/XbbFRbKN581mqcKg6" style="height:200px">
+                        <img class="card-img" src="~/Images/map/JCM-T Map.jpg" alt="jcm-thailand map"/>
+                    </a>
                 </div>
+                @*<div id="mapArea" class="row p-0 m-0 bg-secondary w-100" style="height:400px; word-break:break-all">
+                    <p>JCM-T map</p>
+                </div>*@
                 <div class="col-md-6 pt-3 border">
                     <div class="card text-center border-0 bg-jcm-contact">
                         <h3 class="card-title color-jcm-blue p-3">Contact Us</h3>
@@ -29,28 +34,36 @@
                     </div>
                 </div>
                 <div class="col-md-6 py-3">
-                    @using (Html.BeginForm("Contact","Home"))
+                    @using (Html.BeginForm("Contact", "Home"))
                     {
                         @Html.AntiForgeryToken()
-                    <div class="form-group mx-xl-5 pt-3">
-                        <div class="form-row justify-content-center">
-                            <div class="col-md">
-                                @Html.TextBoxFor(m => m.FromName, new { @class = "form-control mb-2 max-width-768px btn-outline-dark", placeholder = Html.DisplayNameFor(m => m.FromName) })
-                                @Html.ValidationMessageFor(m => m.FromName)
+                        <div class="form-group mx-xl-5 pt-3">
+                            <div class="form-row justify-content-center">
+                                <div class="col-md">
+                                    @Html.TextBoxFor(m => m.FromName, new { @class = "form-control mb-2 max-width-768px btn-outline-dark", placeholder = Html.DisplayNameFor(m => m.FromName) })
+                                    @Html.ValidationMessageFor(m => m.FromName)
+                                </div>
+                                <div class="col-md">
+                                    @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control mb-2 max-width-768px btn-outline-dark", placeholder = Html.DisplayNameFor(m => m.FromEmail) })
+                                    @Html.ValidationMessageFor(m => m.FromEmail)
+                                </div>
                             </div>
-                            <div class="col-md">
-                                @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control mb-2 max-width-768px btn-outline-dark", placeholder = Html.DisplayNameFor(m => m.FromEmail) })
-                                @Html.ValidationMessageFor(m => m.FromEmail)
-                            </div>
+                            @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control mb-2 max-width-768px btn-outline-dark", placeholder = Html.DisplayNameFor(m => m.PhoneNumber) })
+                            @Html.ValidationMessageFor(m => m.PhoneNumber)
+                            @Html.TextBoxFor(m => m.Subject, new { @class = "form-control mb-2 max-width-768px btn-outline-dark", placeholder = Html.DisplayNameFor(m => m.Subject) })
+                            @Html.ValidationMessageFor(m => m.Subject)
+                            @Html.TextAreaFor(m => m.Message, new { @class = "form-control mb-3 max-width-768px btn-outline-dark", @rows = 3, placeholder = Html.DisplayNameFor(m => m.Message) })
+                            @Html.ValidationMessageFor(m => m.Message)
+                            <br />
+                            <p>
+                                Please answer below <br />
+                                What is the total of <b>@System.Web.HttpContext.Current.Session["valA"]</b> and <b>@System.Web.HttpContext.Current.Session["valB"]</b>?
+                            </p>
+                            @Html.TextBoxFor(m => m.AnswerBot, new { @class = "form-control mb-2 max-width-768px btn-outline-dark", placeholder = "Please fill answer number" })
+                            @Html.ValidationMessageFor(m => m.AnswerBot)
+                            <br />
+                            <button type="submit" class="btn-dark w-100">Send</button>
                         </div>
-                        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control mb-2 max-width-768px btn-outline-dark", placeholder = Html.DisplayNameFor(m => m.PhoneNumber) })
-                        @Html.ValidationMessageFor(m => m.PhoneNumber)
-                        @Html.TextBoxFor(m => m.Subject, new { @class = "form-control mb-2 max-width-768px btn-outline-dark", placeholder = Html.DisplayNameFor(m => m.Subject) })
-                        @Html.ValidationMessageFor(m => m.Subject)
-                        @Html.TextAreaFor(m => m.Message, new { @class = "form-control mb-3 max-width-768px btn-outline-dark", @rows = 3, placeholder = Html.DisplayNameFor(m => m.Message) })
-                        @Html.ValidationMessageFor(m => m.Message)
-                        <button type="submit" class="btn-dark w-100">Send</button>
-                    </div>
                     }
                 </div>
             </div>
@@ -61,31 +74,5 @@
 <!-- Import Page Stylesheet -->
 <link rel="stylesheet" type="text/css" href="~/Content/custom.index.css" />
 @section scripts{
-
-    <!-- Google Map -->
-    @*<script type="text/javascript" src="~/Scripts/saraw.script.js"></script>*@
-    <script>
-        function googleMapJCMT() {
-            // The location of Uluru
-            var myLatlng = { lat: 13.7154312, lng: 100.5844659 };//J-Cash Machine (Thailand), 42Tower
-            
-            // The html element to show maps
-            var mapCanvas = document.getElementById('mapArea');
-            // Create option
-            var mapOptions = {
-                zoom: 17,
-                center: myLatlng,
-                //mapTypeId: 'satellite'
-                mapTypeId: 'terrain'
-            };
-            // The map, centered at Uluru
-            var map = new google.maps.Map(mapCanvas, mapOptions);
-            //map.setTilt(45);//only some area
-            // The marker, positioned at Uluru
-            var marker = new google.maps.Marker({ position: myLatlng, map: map });
-        }
-    </script>
-    <!-- API key by Sarawoot : "AIzaSyC3XVnuWyMFemxjfLs_MxF0_E-YsZW-I50" -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3XVnuWyMFemxjfLs_MxF0_E-YsZW-I50&callback=googleMapJCMT" type="text/javascript"></script>
-
+    @*<script src="~/Scripts/siteScripts.js" defer></script>*@
 }
